@@ -61,7 +61,7 @@ build-and-release: export DOCKER_REGISTRY = ghcr.io
 build-and-release: export DOCKER_IMAGE_NAME = brngates98/unpoller
 build-and-release: export GPG_SIGNING_KEY = 
 
-bulid-and-release: clean
+build-and-release: clean
 	goreleaser release --clean
 
 build: export DOCKER_REGISTRY = ghcr.io
