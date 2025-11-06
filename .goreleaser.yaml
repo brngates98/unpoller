@@ -155,12 +155,9 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "ghcr.io/unpoller/unpoller:latest-amd64"
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-amd64"
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-amd64"
-      - "golift/unifi-poller:latest-amd64"
-      - "golift/unifi-poller:{{ .Tag }}-amd64"
-      - "golift/unifi-poller:v{{ .Major }}-amd64"
+      - "ghcr.io/brngates98/unpoller:latest-amd64"
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-amd64"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-amd64"
     use: buildx
     build_flag_templates:
       - "--pull"
@@ -189,12 +186,9 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "ghcr.io/unpoller/unpoller:latest-arm64v8"
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-arm64v8"
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-arm64v8"
-      - "golift/unifi-poller:latest-arm64v8"
-      - "golift/unifi-poller:{{ .Tag }}-arm64v8"
-      - "golift/unifi-poller:v{{ .Major }}-arm64v8"
+      - "ghcr.io/brngates98/unpoller:latest-arm64v8"
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-arm64v8"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-arm64v8"
     use: buildx
     build_flag_templates:
       - "--pull"
@@ -224,12 +218,9 @@ dockers:
     goarch: arm
     goarm: "7"
     image_templates:
-      - "ghcr.io/unpoller/unpoller:latest-armv7"
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-armv7"
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-armv7"
-      - "golift/unifi-poller:latest-armv7"
-      - "golift/unifi-poller:{{ .Tag }}-armv7"
-      - "golift/unifi-poller:v{{ .Major }}-armv7"
+      - "ghcr.io/brngates98/unpoller:latest-armv7"
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-armv7"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-armv7"
     use: buildx
     build_flag_templates:
       - "--pull"
@@ -254,60 +245,33 @@ dockers:
       - "unpoller_manual.html"
 
 docker_manifests:
-  - name_template: 'ghcr.io/unpoller/unpoller:latest'
+  - name_template: 'ghcr.io/brngates98/unpoller:latest'
     create_flags:
       - --insecure
     push_flags:
       - --insecure
     image_templates:
-      - "ghcr.io/unpoller/unpoller:latest-amd64"
-      - "ghcr.io/unpoller/unpoller:latest-arm64v8"
-      - "ghcr.io/unpoller/unpoller:latest-armv7"
-  - name_template: 'ghcr.io/unpoller/unpoller:{{ .Tag }}'
+      - "ghcr.io/brngates98/unpoller:latest-amd64"
+      - "ghcr.io/brngates98/unpoller:latest-arm64v8"
+      - "ghcr.io/brngates98/unpoller:latest-armv7"
+  - name_template: 'ghcr.io/brngates98/unpoller:{{ .Tag }}'
     create_flags:
       - --insecure
     push_flags:
       - --insecure
     image_templates:
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-amd64"
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-arm64v8"
-      - "ghcr.io/unpoller/unpoller:{{ .Tag }}-armv7"
-  - name_template: 'ghcr.io/unpoller/unpoller:v{{ .Major }}'
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-amd64"
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-arm64v8"
+      - "ghcr.io/brngates98/unpoller:{{ .Tag }}-armv7"
+  - name_template: 'ghcr.io/brngates98/unpoller:v{{ .Major }}'
     create_flags:
       - --insecure
     push_flags:
       - --insecure
     image_templates:
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-amd64"
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-arm64v8"
-      - "ghcr.io/unpoller/unpoller:v{{ .Major }}-armv7"
-  - name_template: 'golift/unifi-poller:latest'
-    create_flags:
-      - --insecure
-    push_flags:
-      - --insecure
-    image_templates:
-      - "golift/unifi-poller:latest-amd64"
-      - "golift/unifi-poller:latest-arm64v8"
-      - "golift/unifi-poller:latest-armv7"
-  - name_template: 'golift/unifi-poller:{{ .Tag }}'
-    create_flags:
-      - --insecure
-    push_flags:
-      - --insecure
-    image_templates:
-      - "golift/unifi-poller:{{ .Tag }}-amd64"
-      - "golift/unifi-poller:{{ .Tag }}-arm64v8"
-      - "golift/unifi-poller:{{ .Tag }}-armv7"
-  - name_template: 'golift/unifi-poller:v{{ .Major }}'
-    create_flags:
-      - --insecure
-    push_flags:
-      - --insecure
-    image_templates:
-      - "golift/unifi-poller:v{{ .Major }}-amd64"
-      - "golift/unifi-poller:v{{ .Major }}-arm64v8"
-      - "golift/unifi-poller:v{{ .Major }}-armv7"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-amd64"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-arm64v8"
+      - "ghcr.io/brngates98/unpoller:v{{ .Major }}-armv7"
 
 nfpms:
   - id: unpoller-packages
