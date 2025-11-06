@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Import GPG key
         id: import_gpg
-        if: ${{ secrets.GPG_SIGNING_KEY != '' }}
+        if: secrets.GPG_SIGNING_KEY != ''
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_SIGNING_KEY }}
@@ -56,7 +56,7 @@ jobs:
       # More assembly might be required: Docker logins, GPG, etc. It all depends
       # on your needs.
       - name: "make key file"
-        if: ${{ secrets.GPG_SIGNING_KEY != '' }}
+        if: secrets.GPG_SIGNING_KEY != ''
         run: "echo '${{ secrets.GPG_SIGNING_KEY }}' > /tmp/key.gpg"
       - uses: goreleaser/goreleaser-action@v6
         with:
