@@ -49,16 +49,11 @@ jobs:
           cache: true
       - uses: goreleaser/goreleaser-action@v6
         with:
-          # either 'goreleaser' (default) or 'goreleaser-pro':
-          distribution: goreleaser-pro
+          distribution: goreleaser
           version: latest
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Your GoReleaser Pro key, if you are using the 'goreleaser-pro'
-          # distribution:
-          GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
-          # This needs to be reset every year (next one at 2023-12-22) - use a fine grained PAT with Contents: R/W on golift/homebrew-mugs.
           HOMEBREW_TAP_GITHUB_TOKEN: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
 
