@@ -448,29 +448,11 @@ nfpms:
           owner: unpoller
           group: unpoller
 
-    # signing
-    rpm:
-      signature:
-        key_file: "{{ .Env.GPG_SIGNING_KEY }}"
-    deb:
-      signature:
-        key_file: "{{ .Env.GPG_SIGNING_KEY }}"
-        type: origin
-
     scripts:
       preinstall: "scripts/pre-install.sh"
       postinstall: "scripts/post-install.sh"
       preremove: "scripts/pre-remove.sh"
       postremove: "scripts/post-remove.sh"
-
-signs:
-  - id: default
-    artifacts: all
-    ids:
-      - unpoller
-      - unpoller-linux-arm
-      - unpoller-windows
-      - unpoller-mac
 
 universal_binaries:
   - replace: true
