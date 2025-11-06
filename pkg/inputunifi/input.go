@@ -18,8 +18,8 @@ const PluginName = "unifi"
 
 const (
 	defaultURL  = "https://127.0.0.1:8443"
-	defaultUser = "unifipoller"
-	defaultPass = "unifipoller"
+	defaultUser = "" // No default - use API key or set explicitly
+	defaultPass = "" // No default - use API key or set explicitly
 	defaultSite = "all"
 )
 
